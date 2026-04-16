@@ -1,0 +1,25 @@
+{
+    "blocks": [
+        {
+            "type": "list",
+            "data": {
+                "style": "unordered",
+                "items": [
+                    {
+                        "content": "First item",
+                        "items": [
+                            {
+                                "content": "Nested item",
+                                "items": []
+                            }
+                        ]
+                    },
+                    {
+                        "content": "Second item",
+                        "items": []
+                    }
+                ]
+            }
+        }
+    ]
+}

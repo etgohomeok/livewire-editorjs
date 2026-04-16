@@ -1,0 +1,6 @@
+/vendor
+/node_modules
+/js/node_modules
+.phpunit.result.cache
+.phpunit.cache
+.DS_Store

@@ -1,0 +1,11 @@
+{
+    "blocks": [
+        {
+            "type": "header",
+            "data": {
+                "text": "Section title",
+                "level": 2
+            }
+        }
+    ]
+}

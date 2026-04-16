@@ -1,0 +1,12 @@
+{
+    "blocks": [
+        {
+            "type": "quote",
+            "data": {
+                "text": "To be, or not to be.",
+                "caption": "Shakespeare",
+                "alignment": "left"
+            }
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "blocks": [
+        {
+            "type": "header",
+            "data": {
+                "text": "Intro",
+                "level": 1
+            }
+        },
+        {
+            "type": "paragraph",
+            "data": {
+                "text": "An opening paragraph with <i>italics</i>."
+            }
+        },
+        {
+            "type": "delimiter",
+            "data": {}
+        },
+        {
+            "type": "list",
+            "data": {
+                "style": "ordered",
+                "items": [
+                    {"content": "One", "items": []},
+                    {"content": "Two", "items": []}
+                ]
+            }
+        },
+        {
+            "type": "quote",
+            "data": {
+                "text": "A quoted line.",
+                "caption": "Someone",
+                "alignment": "left"
+            }
+        },
+        {
+            "type": "warning",
+            "data": {
+                "title": "Note",
+                "message": "Pay attention."
+            }
+        },
+        {
+            "type": "image",
+            "data": {
+                "file": {"url": "https://example.com/x.jpg"},
+                "caption": "Alt"
+            }
+        },
+        {
+            "type": "table",
+            "data": {
+                "withHeadings": false,
+                "content": [
+                    ["a", "b"],
+                    ["c", "d"]
+                ]
+            }
+        },
+        {
+            "type": "unknown-block",
+            "data": {"text": "ignored"}
+        }
+    ]
+}

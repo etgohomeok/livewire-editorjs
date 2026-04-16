@@ -1,0 +1,16 @@
+{
+    "blocks": [
+        {
+            "type": "image",
+            "data": {
+                "file": {
+                    "url": "https://example.com/photo.jpg"
+                },
+                "caption": "A <b>bold</b> photo",
+                "withBorder": true,
+                "withBackground": false,
+                "stretched": true
+            }
+        }
+    ]
+}
