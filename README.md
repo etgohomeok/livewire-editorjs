@@ -24,11 +24,15 @@ composer require livewire/flux
 
 ### Editor component
 
-Drop it into any Livewire component's view and bind with `wire:model`:
+Drop it into any Livewire component's view and bind with `wire:model`. The component renders no outer chrome — wrap it yourself to give it width, padding, and a background:
 
 ```blade
-<livewire:editorjs wire:model.live="content" />
+<div class="prose min-w-[840px] max-w-none bg-white py-12 rounded-lg shadow-md">
+    <livewire:editorjs wire:model.live="content" />
+</div>
 ```
+
+Without a wrapper like that, the editor sits with no padding and a transparent background. The example above assumes Tailwind + `@tailwindcss/typography`; style however your app prefers.
 
 `$content` on the parent component will be an array shaped like `['blocks' => [...]]` — the Editor.js save format.
 
