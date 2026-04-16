@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3 - 2026-04-16
+
+- README: document PHP upload limits (`upload_max_filesize`, `post_max_size`, Livewire's `temporary_file_upload.rules`) and the fact that uploaded files aren't cleaned up automatically when image blocks are removed.
+
 ## 0.1.2 - 2026-04-16
 
 - README: note that `php artisan storage:link` is required on the host app when using the default `public` disk, otherwise uploaded images return 403.

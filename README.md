@@ -123,4 +123,17 @@ The `image` tool is wired to Livewire's `WithFileUploads`. Uploaded files land o
 
 If you're using the default `public` disk, run `php artisan storage:link` in your host app — without the `public/storage` symlink, uploaded images 403 when the browser tries to load them.
 
+### PHP upload limits
+
+Uploads are bounded by three separate knobs, all in the host app — the package doesn't override any of them:
+
+- `upload_max_filesize` and `post_max_size` in the web SAPI's `php.ini` (PHP silently rejects anything larger before Laravel sees it — ship defaults are often 2 MB).
+- `livewire.temporary_file_upload.rules` in the host's `config/livewire.php` (defaults to `required|file|max:12288`, i.e. 12 MB).
+
+If an upload fails, the image tool surfaces the file size in the error message — if it's above ~2 MB, the PHP limits are the usual suspect.
+
+### File cleanup
+
+Uploaded images are **not** cleaned up automatically — removing an image block in the editor, deleting the parent record, or never saving the content all leave the underlying file on disk. This is intentional (eager deletion breaks shared images, undo, and edit history), but it means your `directory` will accumulate orphans over time. The typical pattern is a scheduled command that scans the directory and deletes files that aren't referenced by any content in the database.
+
 "Upload by URL" fetches the remote file and re-uploads it to the same disk. There's no built-in size/type validation beyond Livewire's defaults; add a policy in your host app if you need one.

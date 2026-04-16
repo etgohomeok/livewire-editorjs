@@ -69,9 +69,9 @@ function uploadByFile(component, file) {
             () => {
                 component.storeUploadedImage().then((url) => {
                     resolve({ success: 1, file: { url } });
-                }).catch(() => reject('Upload failed'));
+                }).catch(() => reject(new Error('Upload failed')));
             },
-            () => reject('Upload failed')
+            () => reject(new Error('Upload failed'))
         );
     });
 }
