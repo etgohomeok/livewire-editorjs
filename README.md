@@ -121,4 +121,6 @@ php artisan vendor:publish --tag=livewire-editorjs-renderers
 
 The `image` tool is wired to Livewire's `WithFileUploads`. Uploaded files land on the configured `disk` under `directory`, and the returned URL comes from `Storage::disk($disk)->url($path)` — so S3, R2, local `public`, etc. all work as long as the disk is configured in `config/filesystems.php`.
 
+If you're using the default `public` disk, run `php artisan storage:link` in your host app — without the `public/storage` symlink, uploaded images 403 when the browser tries to load them.
+
 "Upload by URL" fetches the remote file and re-uploads it to the same disk. There's no built-in size/type validation beyond Livewire's defaults; add a policy in your host app if you need one.
